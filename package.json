@@ -1,0 +1,13 @@
+{
+  "name": "create-knex-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "dependencies": {
+    "commander": "^4.0.1",
+    "es6-template-strings": "^2.0.1",
+    "inquirer": "^7.0.0"
+  }
+}
