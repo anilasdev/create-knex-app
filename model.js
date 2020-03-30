@@ -10,7 +10,7 @@ module.exports = (args) => {
         model: args.name.toLowerCase(),
         Models: args.name.substr(-1) === 'y' ? args.name.substr(0, args.name.length - 1) + 'ies' : args.name + 's',
     })
-    fs.writeFile(`${__dirname}/models/${args.name}.js`, parsed, function (err) {
+    fs.writeFile(`${process.cwd()}/models/${args.name}.js`, parsed, function (err) {
         if (err) throw err;
         console.log(`Model ${args.name} is created successfully`);
     });

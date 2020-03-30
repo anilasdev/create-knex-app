@@ -1,8 +1,6 @@
 const fs = require('fs');
 const templates = require('es6-template-strings');
 module.exports = (args) => {
-    console.log(args);
-    console.log(`${__dirname}/templates/controller.txt`)
     const contents = fs.readFileSync(`${__dirname}/templates/controller.txt`, 'utf8');
     if (args.name.substr(-1) === 'y') {
         args.name
@@ -13,7 +11,7 @@ module.exports = (args) => {
         Models: args.name.substr(-1) === 'y' ? args.name.substr(0, args.name.length - 1) + 'ies' : args.name + 's',
     }
     const parsed = templates(contents, options)
-    fs.writeFile(`${__dirname}/controllers/${options.Models}.js`, parsed, function (err) {
+    fs.writeFile(`${process.cwd()}/controllers/${options.Models}.js`, parsed, function (err) {
         if (err) throw err;
         console.log(`Controller ${options.Models} is created successfully`);
     });
