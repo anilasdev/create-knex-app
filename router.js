@@ -1,7 +1,7 @@
 const fs = require('fs');
 const templates = require('es6-template-strings');
 module.exports = (args) => {
-    const contents = fs.readFileSync(`${__dirname}/templates/router.txt`, 'utf8');
+    const contents = fs.readFileSync(`${process.env.PWD}/templates/router.txt`, 'utf8');
     if (args.name.substr(-1) === 'y') {
         args.name
     }

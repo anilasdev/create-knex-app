@@ -39,3 +39,5 @@ program
         createModel({ name });
     });
 program.parse(process.argv);
+
+console.log(process.env.PWD)
