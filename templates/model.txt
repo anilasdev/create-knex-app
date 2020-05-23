@@ -2,7 +2,7 @@ var Model = require('../lib/db')
 
 class ${Model} extends Model {
   static get tableName() {
-    return '${model}'
+    return '${modelName}'
   }
 
   static get relationMappings() {
