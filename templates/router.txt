@@ -15,7 +15,6 @@ module.exports = (router) => {
                 req.query,
                 req.query.page,
                 req.query.perPage,
-                req.user.permissions
             )
         } catch (error) {
             if (error.statusCode === 500) {
