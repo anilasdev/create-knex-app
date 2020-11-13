@@ -11,7 +11,7 @@ module.exports = (router) => {
     router.get('/', async (req, res) => {
 
         try {
-            var districts = await get${Models}(
+            var ${model}s = await get${Models}(
                 req.query,
                 req.query.page,
                 req.query.perPage,
@@ -28,7 +28,7 @@ module.exports = (router) => {
             })
         }
 
-        let response = formatResponse(districts)
+        let response = formatResponse(${model}s)
         let status = response.status || 200
         delete response.status
 
@@ -40,7 +40,7 @@ module.exports = (router) => {
 
     router.get('/:id', async (req, res) => {
         try {
-            var district = await get${Model}(req.params.id, req.query)
+            var ${model} = await get${Model}(req.params.id, req.query)
         } catch (error) {
             if (error.statusCode === 500) {
                 console.error(error)
@@ -53,7 +53,7 @@ module.exports = (router) => {
             })
         }
 
-        let response = formatResponse(district)
+        let response = formatResponse(${model})
         let status = response.status || 200
         delete response.status
 
@@ -66,7 +66,7 @@ module.exports = (router) => {
 
     router.post('/', async (req, res) => {
         try {
-            var district = await create${Model}(req.body)
+            var ${model} = await create${Model}(req.body)
         } catch (error) {
             if (error.statusCode === 500) {
                 console.error(error)
@@ -79,7 +79,7 @@ module.exports = (router) => {
             })
         }
 
-        let response = formatResponse(district)
+        let response = formatResponse(${model})
         let status = response.status || 200
         delete response.status
 
@@ -91,7 +91,7 @@ module.exports = (router) => {
 
     router.patch('/:id', async (req, res) => {
         try {
-            var district = await edit${Model}(req.params.id, req.body)
+            var ${model} = await edit${Model}(req.params.id, req.body)
         } catch (error) {
             if (error.statusCode === 500) {
                 console.error(error)
@@ -104,7 +104,7 @@ module.exports = (router) => {
             })
         }
 
-        let response = formatResponse(district)
+        let response = formatResponse(${model})
         let status = response.status || 200
         delete response.status
 
@@ -117,7 +117,7 @@ module.exports = (router) => {
 
     router.delete('/:id', async (req, res) => {
         try {
-            var district = await delete${Model}(req.params.id)
+            var ${model} = await delete${Model}(req.params.id)
         } catch (error) {
             if (error.statusCode === 500) {
                 console.error(error)
@@ -130,7 +130,7 @@ module.exports = (router) => {
             })
         }
 
-        return res.json(formatResponse(district))
+        return res.json(formatResponse(${model}))
 
     })
 
